@@ -1,7 +1,7 @@
 # Winter Clothes Management System
 
 ## Description
-The Winter Clothes Management System is a web-based platform designed to streamline the process of collecting, organizing, and distributing winter clothing to individuals and families in need. It provides a comprehensive solution for managing donations, inventory, distribution events, and volunteer coordination, ultimately facilitating the efficient and equitable distribution of winter garments within the community.
+The Winter Clothes Management System is a web-based platform designed to streamline collecting, organizing, and distributing winter clothing to needy individuals and families. It provides a comprehensive solution for managing donations, inventory, distribution events, and volunteer coordination, ultimately facilitating the community's efficient and equitable distribution of winter garments.
 
 ## Features
 - **User Authentication:** Ensure data privacy and integrity with secure user authentication and role-based access control.
@@ -25,7 +25,7 @@ The Winter Clothes Management System is a web-based platform designed to streaml
 - **Authentication:** JSON Web Tokens (JWT)
 
 ## Deployment
-- **Frontend:** Hosted on Vercel, see at [Site](https://l2b2a6.kiron.dev)
+- **Frontend:** Hosted on Vercel, see at [Site](https://l2b2a7.kiron.dev)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
