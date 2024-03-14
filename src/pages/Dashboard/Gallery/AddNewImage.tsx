@@ -10,7 +10,7 @@ import {
           FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useCreateGalleryImageMutation, useGetGalleryImagesQuery } from "@/redux/features/gallery/galleryApi";
+import { useCreateGalleryImageMutation } from "@/redux/features/gallery/galleryApi";
 import { addNewImageSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UseFormReturn, useForm } from "react-hook-form";
@@ -20,7 +20,6 @@ import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 export default function AddNewImage() {
-          const { refetch } = useGetGalleryImagesQuery(undefined);
           const [addNewImage] = useCreateGalleryImageMutation();
 
           const navigate = useNavigate();
@@ -57,7 +56,6 @@ export default function AddNewImage() {
                                         ));
 
                                         form.reset();
-                                        refetch();
                                         navigate('/dashboard/gallery');
                               } else {
                                         return toast.custom(() => (

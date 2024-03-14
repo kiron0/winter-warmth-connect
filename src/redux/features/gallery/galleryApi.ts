@@ -7,19 +7,22 @@ const galleryApi = baseApi.injectEndpoints({
                                         url: '/gallery/all',
                                         method: 'GET',
                               }),
+                              providesTags: ['gallery'],
                     }),
                     createGalleryImage: builder.mutation({
-                              query: (clothInfo) => ({
+                              query: (galleryInfo) => ({
                                         url: '/gallery/create',
                                         method: 'POST',
-                                        body: clothInfo,
+                                        body: galleryInfo,
                               }),
+                              invalidatesTags: ['gallery'],
                     }),
                     deleteGalleryImage: builder.mutation({
                               query: (id: string) => ({
                                         url: `/gallery/delete?id=${id}`,
                                         method: 'DELETE',
                               }),
+                              invalidatesTags: ['gallery'],
                     }),
           }),
 });

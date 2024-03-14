@@ -20,7 +20,7 @@ import Swal from "sweetalert2";
 import EditWinterCloth from "./EditWinterCloth";
 
 export default function DashWinterClothes() {
-          const { data, isLoading, refetch } = useGetWinterClothesQuery(undefined);
+          const { data, isLoading } = useGetWinterClothesQuery(undefined);
           const clothes = data?.data as TCloth[];
 
           const [clothModal, setClothModal] = useState<TCloth | null>(null);
@@ -48,7 +48,6 @@ export default function DashWinterClothes() {
                                                                       subtitle={data?.message}
                                                             />
                                                   ));
-                                                  refetch();
                                         } else {
                                                   toast.custom(() => (
                                                             <CustomToastMessage
@@ -99,7 +98,6 @@ export default function DashWinterClothes() {
                                                                                                                                             button={<Button size="sm" className="px-3 h-8 text-xs" onClick={() => setClothModal(cloth)}><BiPencil /></Button>}
                                                                                                                                             clothModal={clothModal}
                                                                                                                                             setClothModal={setClothModal}
-                                                                                                                                            refetch={refetch}
                                                                                                                                   />
                                                                                                                         ) : (
                                                                                                                                   <Button size="sm" className="px-3 h-8 text-xs" onClick={() => setClothModal(cloth)}><BiPencil /></Button>

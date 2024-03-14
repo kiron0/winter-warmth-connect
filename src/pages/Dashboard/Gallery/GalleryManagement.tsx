@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export default function GalleryManagement() {
-          const { data, isLoading, refetch } = useGetGalleryImagesQuery(undefined);
+          const { data, isLoading } = useGetGalleryImagesQuery(undefined);
           const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
           const gallery = data?.data as TGallery[];
@@ -48,7 +48,6 @@ export default function GalleryManagement() {
                                                                       subtitle={data?.message}
                                                             />
                                                   ));
-                                                  refetch();
                                         } else {
                                                   toast.custom(() => (
                                                             <CustomToastMessage

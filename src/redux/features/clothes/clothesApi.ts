@@ -7,6 +7,7 @@ const clothesApi = baseApi.injectEndpoints({
                                         url: '/clothes/all',
                                         method: 'GET',
                               }),
+                              providesTags: ['clothes'],
                     }),
                     getWinterClothById: builder.query({
                               query: (id: string) => ({
@@ -20,12 +21,14 @@ const clothesApi = baseApi.injectEndpoints({
                                         method: 'POST',
                                         body: clothInfo,
                               }),
+                              invalidatesTags: ['clothes'],
                     }),
                     deleteWinterCloth: builder.mutation({
                               query: (id: string) => ({
                                         url: `/clothes/delete?id=${id}`,
                                         method: 'DELETE',
                               }),
+                              invalidatesTags: ['clothes'],
                     }),
                     updateWinterCloth: builder.mutation({
                               query: (clothInfo) => ({
@@ -33,6 +36,9 @@ const clothesApi = baseApi.injectEndpoints({
                                         method: 'PUT',
                                         body: clothInfo,
                               }),
+                              invalidatesTags: (_result, _error, arg) => ([
+                                        { type: 'clothes', id: arg._id },
+                              ]),
                     }),
           }),
 });

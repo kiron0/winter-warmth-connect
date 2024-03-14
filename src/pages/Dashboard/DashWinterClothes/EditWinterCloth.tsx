@@ -42,10 +42,9 @@ type EditWinterClothProps = {
           button: ReactNode,
           clothModal: TCloth | null
           setClothModal: (cloth: TCloth | null) => void
-          refetch: () => void
 }
 
-export default function EditWinterCloth({ button, clothModal, setClothModal, refetch }: EditWinterClothProps) {
+export default function EditWinterCloth({ button, clothModal, setClothModal }: EditWinterClothProps) {
           const [updateWinterCloth] = useUpdateWinterClothMutation();
           const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
 
@@ -89,7 +88,6 @@ export default function EditWinterCloth({ button, clothModal, setClothModal, ref
                                                   />
                                         ));
 
-                                        refetch();
                                         setClothModal(null);
                               } else {
                                         return toast.custom(() => (
