@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/constants";
 import { LogOut } from "lucide-react";
 import { BiSolidTShirt } from "react-icons/bi";
+import { FaQuoteLeft } from "react-icons/fa6";
 import { GiClothes } from "react-icons/gi";
 import { IoImage } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
@@ -47,6 +48,12 @@ export default function Sidebar({ handleSidebarToggle, handleLogout }: { handleS
                                                                       title="Create Winter Clothes"
                                                                       to="/dashboard/create-winter-clothes"
                                                                       icon={<BiSolidTShirt size={20} />}
+                                                                      handleSidebarToggle={handleSidebarToggle}
+                                                            />
+                                                            <DashboardLink
+                                                                      title="Create Testimonial"
+                                                                      to="/dashboard/create-testimonial"
+                                                                      icon={<FaQuoteLeft size={20} />}
                                                                       handleSidebarToggle={handleSidebarToggle}
                                                             />
                                                             <DashboardLink
