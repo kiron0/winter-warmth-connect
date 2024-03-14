@@ -1,5 +1,6 @@
 import ClothCard from "@/components/cloth-card";
 import Loading from "@/components/loading";
+import PagesTitle from "@/components/pages-title";
 import StyleProvider from "@/components/style-provider";
 import useScrollToTop from "@/hooks/useScrollToTop";
 import { useGetWinterClothesQuery } from "@/redux/features/clothes/clothesApi";
@@ -14,12 +15,7 @@ export default function WinterClothes() {
 
           return (
                     <StyleProvider>
-                              <div className="pb-12">
-                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-primary'>Winter Clothes</h1>
-                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-primary px-1'>
-                                                  Winter is coming. Get ready with our winter clothes collection. We have a wide range of winter clothes for distribution.
-                                        </p>
-                              </div>
+                              <PagesTitle title='Winter Clothes' description='Winter is coming. Get ready with our winter clothes collection. We have a wide range of winter clothes for distribution.' />
                               {
                                         isLoading ? (
                                                   <Loading />
