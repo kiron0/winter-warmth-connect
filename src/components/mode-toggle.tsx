@@ -12,7 +12,7 @@ export function ModeToggle({ onClose }: { onClose?: () => void }) {
           }
 
           return (
-                    <div className={`sm:cursor-pointer flex items-center gap-2 rounded-lg shadow-sm text-sm md:text-base p-2 outline-none border-none`} onClick={handleThemeChange}>
+                    <div className={`sm:cursor-pointer flex items-center gap-2 text-sm md:text-base p-2`} onClick={handleThemeChange}>
                               {theme === 'light' ? <MoonIcon size={18} /> : <SunIcon size={18} />}
                     </div>
           )

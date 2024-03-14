@@ -24,7 +24,7 @@ export default function DashboardTitle({ title, subtitle, isBackVisible }: Dashb
                                         )}
                                         {title}
                               </h1>
-                              <p className="text-gray-500 text-sm md:text-base mb-5">{subtitle}</p>
+                              <p className="text-gray-500 dark:text-primary text-sm md:text-base mb-5">{subtitle}</p>
                     </section>
           )
 }

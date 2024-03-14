@@ -1,4 +1,4 @@
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 import CustomToastMessage from "@/components/custom-toast-message";
 import { ModeToggle } from "@/components/mode-toggle";
 import NavLinkItem from "@/components/nav-link";

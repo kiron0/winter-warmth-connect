@@ -1,4 +1,4 @@
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 import { APP_NAME } from "@/constants";
 import SocialIcons from './SocialIcons';
 

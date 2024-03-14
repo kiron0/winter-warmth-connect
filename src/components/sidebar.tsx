@@ -1,6 +1,6 @@
 "use client"
 
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 import DashboardLink from "@/components/dashboard-link";
 import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/constants";

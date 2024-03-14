@@ -1,4 +1,5 @@
 import CustomToastMessage from "@/components/custom-toast-message";
+import { ModeToggle } from "@/components/mode-toggle";
 import ProfileDropdown from "@/components/profile-dropdown";
 import Sidebar from "@/components/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -85,16 +86,21 @@ export default function Dashboard() {
                                                             <h2 className="hidden xl:flex text-xl md:text-2xl font-bold justify-center items-center gap-2">Welcome to <Link to="/">{APP_NAME}</Link></h2>
                                                   </div>
                                                   <h2 className="xl:hidden flex text-base md:text-lg font-bold justify-center items-center gap-2"><span className="hidden xl:flex">Welcome to </span><Link to="/">{APP_NAME}</Link></h2>
-                                                  <div className="cursor-pointer relative border rounded-full p-1" onClick={() => setAvatarOpen(!avatarOpen)}>
-                                                            <Avatar className="size-9 md:size-10">
-                                                                      <AvatarImage alt={user?.email} src={user?.image} />
-                                                                      <AvatarFallback>{getFallBackImageName(user?.image) || "X"}</AvatarFallback>
-                                                            </Avatar>
-                                                            {
-                                                                      avatarOpen && (
-                                                                                <ProfileDropdown user={user} handleLogout={handleLogout} avatarRef={avatarRef} />
-                                                                      )
-                                                            }
+                                                  <div className="relative flex items-center gap-2">
+                                                            <div className="hidden md:flex">
+                                                                      <ModeToggle />
+                                                            </div>
+                                                            <div className="cursor-pointer border rounded-full p-1" onClick={() => setAvatarOpen(!avatarOpen)}>
+                                                                      <Avatar className="size-9 md:size-10">
+                                                                                <AvatarImage alt={user?.email} src={user?.image} />
+                                                                                <AvatarFallback>{getFallBackImageName(user?.image) || "X"}</AvatarFallback>
+                                                                      </Avatar>
+                                                                      {
+                                                                                avatarOpen && (
+                                                                                          <ProfileDropdown user={user} handleLogout={handleLogout} avatarRef={avatarRef} />
+                                                                                )
+                                                                      }
+                                                            </div>
                                                   </div>
                                         </header>
                                         <section className="mt-3 ml-1">

@@ -5,6 +5,7 @@ import { TUserDetails } from "@/types"
 import { getFallBackImageName } from "@/utils/getImageName"
 import { LogOut } from "lucide-react"
 import { RefObject } from "react"
+import { ModeToggle } from "./mode-toggle"
 
 type TProfileDropdownProps = {
   handleLogout: () => void,
@@ -15,7 +16,10 @@ type TProfileDropdownProps = {
 export default function ProfileDropdown({ user, handleLogout, avatarRef }: TProfileDropdownProps) {
   return (
     <div className="absolute -right-5 top-[4.5rem] md:top-[4.7rem] cursor-default" ref={avatarRef}>
-      <div className="bg-white dark:bg-gray-700 shadow-md border rounded-2xl p-2 w-72 z-[999]">
+      <div className="bg-background shadow-md border rounded-2xl p-2 w-72 z-[999] relative">
+        <div className="absolute top-1 right-1 md:hidden">
+          <ModeToggle />
+        </div>
         <div className="flex justify-center items-center my-4">
           <Avatar className="size-16 border rounded-full">
             <AvatarImage alt={user?.email} src={user?.image} />

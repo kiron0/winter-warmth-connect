@@ -1,5 +1,5 @@
 
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 import { cn } from "@/lib/utils";
 
 type ToastProps = {
