@@ -88,7 +88,7 @@ export default function DashWinterClothes() {
                                                                                                     <TableCell className="capitalize">{cloth?.category}</TableCell>
                                                                                                     <TableCell>
                                                                                                               {cloth?.size?.map((size, index) => (
-                                                                                                                        <span key={index} className="capitalize bg-gray-100 rounded-md shadow-sm px-2 py-1 text-xs mr-2">{size}</span>
+                                                                                                                        <span key={index} className="capitalize bg-primary text-primary-foreground rounded-md shadow-sm px-2 py-1 text-xs mr-2">{size}</span>
                                                                                                               ))}
                                                                                                     </TableCell>
                                                                                                     <TableCell className="text-right">

@@ -65,7 +65,7 @@ export default function Sidebar({ handleSidebarToggle, handleLogout }: { handleS
                                                   </nav>
                                         </div>
                                         <div className="pt-3 flex w-full">
-                                                  <Button variant="outline" className={`w-full flex justify-start items-center gap-2 text-sm md:text-base text-black h-12 md:h-[3.5rem]`}
+                                                  <Button variant="outline" className={`w-full flex justify-start items-center gap-2 text-sm md:text-base text-primary h-12 md:h-[3.5rem]`}
                                                             onClick={() => {
                                                                       typeof window !== "undefined" && window.innerWidth < 1024 ? handleSidebarToggle : undefined;
                                                                       handleLogout();

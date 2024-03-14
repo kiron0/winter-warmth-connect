@@ -3,8 +3,8 @@ import { TAuthState } from '@/types';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: TAuthState = {
-          user: null,
-          token: null,
+          user: undefined,
+          token: undefined,
 };
 
 const authSlice = createSlice({
@@ -17,8 +17,9 @@ const authSlice = createSlice({
                               state.token = token;
                     },
                     logout: (state) => {
-                              state.user = null;
-                              state.token = null;
+                              state.user = undefined;
+                              state.token = undefined;
+                              localStorage.removeItem('wwAccessToken');
                     }
           },
 });

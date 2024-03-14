@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { APP_NAME } from "@/constants";
 import { logout } from "@/redux/features/auth/authSlice";
-import { clearUserDetails } from "@/redux/features/user/userSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { TUserDetails } from "@/types";
 import { navLinks } from "@/utils";
@@ -60,7 +59,6 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
 
           const handleLogOut = () => {
                     dispatch(logout());
-                    dispatch(clearUserDetails());
                     navigate('/');
 
                     toast.custom(() => (

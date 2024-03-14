@@ -3,9 +3,9 @@ import ProfileDropdown from "@/components/profile-dropdown";
 import Sidebar from "@/components/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { APP_NAME } from "@/constants";
+import useAuth from "@/hooks/useAuth";
 import { logout } from "@/redux/features/auth/authSlice";
-import { currentUserDetails } from "@/redux/features/user/userSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useAppDispatch } from "@/redux/hooks";
 import { getFallBackImageName } from "@/utils/getImageName";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
@@ -18,7 +18,7 @@ export default function Dashboard() {
           const sidebarRef = useRef<HTMLDivElement>(null);
           const avatarRef = useRef<HTMLDivElement>(null);
 
-          const user = useAppSelector(currentUserDetails);
+          const { isValidUser: user } = useAuth();
 
           const dispatch = useAppDispatch();
 

@@ -27,7 +27,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 export default function Login() {
-          const [isLoading, setIsLoading] = useState<boolean>(false);
           const [isShowPassword, setIsShowPassword] = useState<boolean>(false);
 
           const navigate = useNavigate();
@@ -48,11 +47,12 @@ export default function Login() {
 
                     if (email && password) {
                               try {
-                                        setIsLoading(true);
                                         const res = await login({ email, password }).unwrap();
 
                                         if (res?.success) {
                                                   const user = verifyToken(res?.data?.accessToken) as TUser;
+
+                                                  localStorage.setItem("wwAccessToken", res?.data?.accessToken as string);
 
                                                   dispatch(setUser({ user, token: res?.data?.accessToken }));
 
@@ -66,12 +66,10 @@ export default function Login() {
                                                             position: window.innerWidth > 768 ? 'top-center' : 'bottom-center'
                                                   });
 
-                                                  setIsLoading(false);
                                                   navigate("/dashboard");
                                         }
                                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                               } catch (err: any) {
-                                        setIsLoading(false);
                                         toast.custom(() => (
                                                   <CustomToastMessage
                                                             title="Error"
@@ -133,7 +131,7 @@ export default function Login() {
                                                                       )}
                                                             />
                                                             <div className="flex justify-end">
-                                                                      <Button loading={isLoading} type="submit" size="sm" className="text-xs">Submit</Button>
+                                                                      <Button loading={form.formState.isSubmitting} type="submit" size="sm" className="text-xs">Submit</Button>
                                                             </div>
                                                   </form>
                                         </Form>

@@ -6,8 +6,8 @@ export type TUser = {
 };
 
 export type TAuthState = {
-          user: null | TUser;
-          token: null | string;
+          user: undefined | TUser;
+          token: undefined | string;
 };
 
 export type TUserDetails = {

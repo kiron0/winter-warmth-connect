@@ -4,15 +4,23 @@ import router from '@/routes/routes'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Toaster } from 'react-hot-toast'
+import {
+  QueryClient,
+  QueryClientProvider
+} from 'react-query'
 import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
 import './index.css'
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-        <RouterProvider router={router} />
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
       </ThemeProvider>
       <Toaster />
     </Provider>

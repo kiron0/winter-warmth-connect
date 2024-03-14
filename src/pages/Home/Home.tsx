@@ -1,4 +1,5 @@
 import ScrollToTop from "@/components/scroll-to-top";
+import useAuth from "@/hooks/useAuth";
 import Banner from "@/pages/Home/Banner";
 import Clothes from "@/pages/Home/Clothes";
 import Footer from "@/pages/Home/Footer/Footer";
@@ -7,11 +8,9 @@ import Navbar from "@/pages/Home/Navbar";
 import Testimonial from "@/pages/Home/Testimonial";
 import WhoAreWe from "@/pages/Home/WhoAreWe";
 import WhyJoinNow from "@/pages/Home/WhyJoinNow";
-import { currentUserDetails } from "@/redux/features/user/userSlice";
-import { useAppSelector } from "@/redux/hooks";
 
 export default function Home() {
-          const user = useAppSelector(currentUserDetails);
+          const { isValidUser: user } = useAuth();
 
           return (
                     <div className="w-full max-w-7xl mx-auto">
