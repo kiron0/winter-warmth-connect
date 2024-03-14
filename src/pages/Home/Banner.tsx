@@ -32,10 +32,10 @@ export default function Banner({ user }: { user: TUserDetails | null }) {
                                         {
                                                   !user?.email ? (
                                                             <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
-                                                                      <Link to={'/register'} className="font-lemonMilk border py-2.5 px-5 bg-primary text-white rounded-full text-sm md:text-base">
+                                                                      <Link to={'/register'} className="font-lemonMilk border py-2.5 px-5 bg-primary text-primary-foreground rounded-full text-sm md:text-base">
                                                                                 Join Now
                                                                       </Link>
-                                                                      <Link to={'/login'} className="font-lemonMilk z-0 border py-2.5 px-5 rounded-full text-sm md:text-base duration-300 sm:hover:bg-primary sm:hover:text-white">
+                                                                      <Link to={'/login'} className="font-lemonMilk z-0 border py-2.5 px-5 rounded-full text-sm md:text-base duration-300 sm:hover:bg-primary sm:hover:text-primary-foreground">
                                                                                 Login
                                                                       </Link>
                                                             </div>
@@ -44,7 +44,7 @@ export default function Banner({ user }: { user: TUserDetails | null }) {
                                                                       <h1 className='py-2 px-5 rounded-full font-bold text-lg md:text-xl border border-gray-400 flex items-center gap-2 select-none'>
                                                                                 Welcome back, {user?.username?.slice(0, 6)} <MdOutlineWavingHand className='inline-block text-xl' />
                                                                       </h1>
-                                                                      <Link to={'/dashboard'} className="py-2 px-5 rounded-full font-bold text-lg md:text-xl bg-primary text-white">
+                                                                      <Link to={'/dashboard'} className="py-2 px-5 rounded-full font-bold text-lg md:text-xl bg-primary text-primary-foreground">
                                                                                 Dashboard
                                                                       </Link>
                                                             </div>

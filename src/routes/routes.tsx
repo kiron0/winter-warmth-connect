@@ -1,6 +1,7 @@
 import App from '@/App';
 import NoRedirectToAuth from '@/components/layout/NoRedirectToAuth';
 import ProtectedRoute from '@/components/layout/ProtectedRoute';
+import AboutUs from '@/pages/AboutUs/AboutUs';
 import Community from '@/pages/Community/Community';
 import CreateTestimonial from '@/pages/Dashboard/CreateTestimonial/CreateTestimonial';
 import DashCreateWinterClothes from '@/pages/Dashboard/DashCreateWinterClothes/DashCreateWinterClothes';
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
                                         element: <AddNewImage />,
                               },
                     ],
+          },
+          {
+                    path: '/about-us',
+                    element: <AboutUs />,
           },
           {
                     path: '/leaderboard',

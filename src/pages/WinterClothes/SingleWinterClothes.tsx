@@ -51,7 +51,7 @@ export default function SingleWinterClothes() {
                                                                                 <p className="text-base">{cloth?.description}</p>
                                                                                 <p className="text-sm capitalize">Category: {cloth?.category}</p>
                                                                                 <p className="text-sm">Size: {cloth?.size?.map((size, index) => (
-                                                                                          <span key={index} className="bg-gray-100 ml-2 rounded-md shadow-sm px-2 py-1 text-xs">{size}</span>
+                                                                                          <span key={index} className="bg-primary text-primary-foreground ml-2 rounded-md shadow-sm px-2 py-1 text-xs">{size}</span>
                                                                                 ))}</p>
                                                                                 <div className="flex justify-end pt-5">
                                                                                           {

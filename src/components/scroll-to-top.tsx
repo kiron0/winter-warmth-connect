@@ -24,7 +24,7 @@ export default function ScrollToTop() {
 
   return (
     <div className={`fixed cursor-pointer z-40 right-10 bottom-12 ${visible ? 'inline' : 'hidden'}`}>
-      <HiOutlineArrowNarrowUp className="text-3xl md:text-4xl bg-primary text-white p-2 rounded-lg" onClick={scrollToTop} />
+      <HiOutlineArrowNarrowUp className="text-3xl md:text-4xl bg-primary text-primary-foreground p-2 rounded-lg" onClick={scrollToTop} />
     </div>
   )
 }

@@ -13,7 +13,7 @@ export default function Footer() {
 
           return (
                     <div className='pb-5 mx-3 md:mx-3 lg:mx-0'>
-                              <div className='w-full pt-24 text-black'>
+                              <div className='w-full pt-24 text-primary'>
                                         <div className='w-full border px-4 md:px-12 py-4 rounded-3xl'>
                                                   <img src={Logo} draggable={false} alt="logo" className='h-20 w-20 mb-3 select-none rounded-lg' />
                                                   <h1 className='text-2xl md:text-3xl font-bold font-lemonMilk'>{APP_NAME}</h1>

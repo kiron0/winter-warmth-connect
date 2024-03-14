@@ -13,8 +13,8 @@ export default function Clothes() {
           return (
                     <div>
                               <div className="pb-12">
-                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-black'>Winter Clothes</h1>
-                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-black px-1'>
+                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-primary'>Winter Clothes</h1>
+                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-primary px-1'>
                                                   Winter is coming. Get ready with our winter clothes collection. We have a wide range of winter clothes for distribution.
                                         </p>
                               </div>
@@ -32,7 +32,7 @@ export default function Clothes() {
                                                                                 </div>
                                                                       ) : (
                                                                                 <div className="flex justify-center">
-                                                                                          <p className="text-lg text-gray-500 font-monospaceTypewriter">No clothes found</p>
+                                                                                          <p className="text-lg text-gray-500 dark:text-primary font-monospaceTypewriter">No clothes found</p>
                                                                                 </div>
                                                                       )
                                                             }

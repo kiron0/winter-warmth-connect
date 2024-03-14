@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function ClothCard({ cloth }: { cloth: TCloth }) {
           return (
-                    <Card key={cloth?._id} className="w-full bg-white rounded-xl shadow-md overflow-hidden">
+                    <Card key={cloth?._id} className="w-full bg-background rounded-xl shadow-md overflow-hidden">
                               <div className="relative">
                                         <img
                                                   alt={cloth?.title}
@@ -21,7 +21,7 @@ export default function ClothCard({ cloth }: { cloth: TCloth }) {
                                         </div>
                                         <div className="flex justify-between items-center">
                                                   <p className="text-sm font-medium capitalize">Size: {cloth?.size?.map((size, index) => (
-                                                            <span key={index} className="bg-gray-100 ml-2 rounded-md shadow-sm px-2 py-1 text-xs">{size}</span>
+                                                            <span key={index} className="bg-primary text-primary-foreground ml-2 rounded-md shadow-sm px-2 py-1 text-xs">{size}</span>
                                                   ))}</p>
                                                   <Link to={`/winter-clothes/${cloth?._id}`}>
                                                             <Button variant="default" size="sm" className="text-xs">View Detail</Button>

@@ -14,19 +14,19 @@ export default function SocialIcons({ urls }: SocialIcon) {
           const socialIcons = [
                     {
                               url: urls?.facebook,
-                              icon: <FaFacebook className='text-xl sm:group-hover:text-white duration-300' />
+                              icon: <FaFacebook className='text-xl sm:group-hover:text-primary-foreground duration-300' />
                     },
                     {
                               url: urls?.instagram,
-                              icon: <FaInstagram className='text-xl sm:group-hover:text-white duration-300' />
+                              icon: <FaInstagram className='text-xl sm:group-hover:text-primary-foreground duration-300' />
                     },
                     {
                               url: urls?.twitter,
-                              icon: <FaTwitter className='text-xl sm:group-hover:text-white duration-300' />
+                              icon: <FaTwitter className='text-xl sm:group-hover:text-primary-foreground duration-300' />
                     },
                     {
                               url: urls?.youtube,
-                              icon: <FaYoutube className='text-xl sm:group-hover:text-white duration-300' />
+                              icon: <FaYoutube className='text-xl sm:group-hover:text-primary-foreground duration-300' />
                     }
           ]
 

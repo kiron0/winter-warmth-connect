@@ -37,12 +37,12 @@ export default function Testimonial() {
           return (
                     <div className='pb-10 md:px-12 my-10 px-6 md:my-16 py-12'>
                               <div className="pb-12">
-                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-black'>Testimonial</h1>
-                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-black px-1'>
+                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-primary'>Testimonial</h1>
+                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-primary px-1'>
                                                   Explore donor testimonials with engaging animations and sliders. Witness the impact of your support firsthand as stories of warmth and hope come to life. Join us in spreading compassion this winter.
                                         </p>
                               </div>
-                              <div className="rounded-md flex flex-col antialiased bg-white dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+                              <div className="rounded-md flex flex-col antialiased bg-background items-center justify-center relative overflow-hidden">
                                         <InfiniteMovingCards
                                                   items={testimonials?.slice(0, 6)}
                                                   direction="right"

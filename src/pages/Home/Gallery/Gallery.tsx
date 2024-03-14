@@ -26,8 +26,8 @@ export default function Gallery({ isResetStyle, isRenderedAll, className, hidden
           return (
                     <div className={`${isResetStyle ? "" : "pb-10 md:px-12 my-10 px-6 md:my-16 py-12"}`}>
                               <div className="pb-12">
-                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-black'>Gallery</h1>
-                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-black px-1'>
+                                        <h1 className='text-2xl md:text-3xl lg:text-4xl py-4 text-center font-lemonMilk text-primary'>Gallery</h1>
+                                        <p className='w-full mx-auto text-base md:text-lg text-center font-monospaceTypewriter text-primary px-1'>
                                                   Be amazed by the transformative impact we're making in the lives of those struggling with winter clothing insecurity. Check out our gallery now.
                                         </p>
                               </div>

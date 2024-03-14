@@ -25,10 +25,10 @@ export default function CustomToastMessage({ title, subtitle, titleClassName, su
                                                             />
                                                   </div>
                                                   <div className="ml-3 w-0 flex-1 py-1.5">
-                                                            <p className={cn("text-sm font-semibold text-gray-900", titleClassName)}>
+                                                            <p className={cn("text-sm font-semibold text-primary-foreground", titleClassName)}>
                                                                       {title}
                                                             </p>
-                                                            <p className={cn("mt-1 text-sm text-gray-500", subtitleClassName)}>
+                                                            <p className={cn("mt-1 text-sm text-primary-foreground", subtitleClassName)}>
                                                                       {subtitle}
                                                             </p>
                                                   </div>

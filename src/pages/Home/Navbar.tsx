@@ -1,5 +1,6 @@
 import Logo from "@/assets/logo.png";
 import CustomToastMessage from "@/components/custom-toast-message";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
           DropdownMenu,
           DropdownMenuContent,
@@ -38,7 +39,7 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                               <NavLink
                                         to="/winter-clothes"
                                         className={({ isActive }) =>
-                                                  isActive ? "text-white font-lemonMilk transition duration-300 py-2 px-3 rounded-full bg-primary" : `sm:hover:text-white border transition duration-300 py-2 px-3 rounded-full sm:hover:bg-primary font-lemonMilk`
+                                                  isActive ? "bg-primary text-primary-foreground font-lemonMilk transition duration-300 py-2 px-3 rounded-full" : `border transition duration-300 py-2 px-3 rounded-full sm:hover:bg-primary sm:hover:text-primary-foreground font-lemonMilk`
                                         }
                               >
                                         Winter Clothes
@@ -46,7 +47,7 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                               <NavLink
                                         to="/gallery"
                                         className={({ isActive }) =>
-                                                  isActive ? "text-white font-lemonMilk transition duration-300 py-2 px-3 rounded-full bg-primary" : `sm:hover:text-white border transition duration-300 py-2 px-3 rounded-full sm:hover:bg-primary font-lemonMilk`
+                                                  isActive ? "bg-primary text-primary-foreground font-lemonMilk transition duration-300 py-2 px-3 rounded-full" : `border transition duration-300 py-2 px-3 rounded-full sm:hover:bg-primary sm:hover:text-primary-foreground font-lemonMilk`
                                         }
                               >
                                         Gallery
@@ -55,7 +56,7 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                         !user?.email && (
                                                   <NavLink
                                                             to="/login"
-                                                            className='text-white transition duration-300 py-2 px-3 rounded-full bg-primary flex items-center gap-2 font-lemonMilk'>
+                                                            className='transition duration-300 py-2 px-3 rounded-full bg-primary text-primary-foreground flex items-center gap-2 font-lemonMilk'>
                                                             <HiOutlineLogin size={18} /> Login
                                                   </NavLink>
                                         )
@@ -101,7 +102,10 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                                                                                         />
                                                                                                               </div>
                                                                                                     </DropdownMenuTrigger>
-                                                                                                    <DropdownMenuContent className="w-[15rem] mr-4 mt-2 space-y-2 rounded-xl">
+                                                                                                    <DropdownMenuContent className="w-[15rem] mr-4 mt-2 space-y-2 rounded-xl relative">
+                                                                                                              <div className="absolute top-0 right-0">
+                                                                                                                        <ModeToggle />
+                                                                                                              </div>
                                                                                                               <DropdownMenuLabel>
                                                                                                                         <div className="flex flex-col justify-center items-center mt-4">
                                                                                                                                   <div className={`w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden`}>
@@ -118,12 +122,12 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                                                                               </DropdownMenuLabel>
                                                                                                               <DropdownMenuSeparator />
                                                                                                               <Link to="/dashboard">
-                                                                                                                        <DropdownMenuItem className="flex items-center gap-2 cursor-pointer sm:hover:bg-gray-100 duration-300 py-2.5 mt-1">
+                                                                                                                        <DropdownMenuItem className="flex items-center gap-2 cursor-pointer sm:hover:bg-accent duration-300 py-2.5 mt-1">
                                                                                                                                   <BsGrid /> Dashboard
                                                                                                                         </DropdownMenuItem>
                                                                                                               </Link>
                                                                                                               <button onClick={handleLogOut} className="w-full">
-                                                                                                                        <DropdownMenuItem className="flex items-center gap-2 cursor-pointer bg-gray-100 py-2.5">
+                                                                                                                        <DropdownMenuItem className="flex items-center gap-2 cursor-pointer bg-primary text-primary-foreground py-2.5 duration-300">
                                                                                                                                   <HiOutlineLogout size={16} /> Logout
                                                                                                                         </DropdownMenuItem>
                                                                                                               </button>
@@ -134,7 +138,7 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                             }
                                                   </div>
                                                   <div className="md:hidden flex">
-                                                            <button onClick={toggleMobileMenu} className='z-30'>
+                                                            <button onClick={toggleMobileMenu} className='z-30 dark:text-white'>
                                                                       {isMobileMenuOpen ?
                                                                                 (<AiOutlineClose size={30} />)
                                                                                 :
@@ -146,7 +150,7 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                               </div>
                               {isMobileMenuOpen && (
                                         <div className="md:hidden absolute top-0 w-full z-10">
-                                                  <div className="bg-white relative flex flex-col justify-start items-center gap-4 px-2 pt-24 h-screen">
+                                                  <div className="bg-white dark:bg-background dark:text-primary relative flex flex-col justify-start items-center gap-4 px-2 pt-24 h-screen">
                                                             {MenuLinks}
                                                             {
                                                                       user?.email && (
@@ -154,12 +158,13 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                                                           <Link to={'/dashboard'} className="py-2 px-3 rounded-full border font-lemonMilk">
                                                                                                     Dashboard
                                                                                           </Link>
-                                                                                          <button onClick={() => { handleLogOut(), setIsMobileMenuOpen(!isMobileMenuOpen) }} className="flex items-center gap-2 bg-primary text-white py-2 px-3 rounded-full border font-lemonMilk">
+                                                                                          <button onClick={() => { handleLogOut(), setIsMobileMenuOpen(!isMobileMenuOpen) }} className="flex items-center gap-2 bg-primary text-primary-foreground py-2 px-3 rounded-full border font-lemonMilk">
                                                                                                     <HiOutlineLogout size={18} /> Logout
                                                                                           </button>
                                                                                 </>
                                                                       )
                                                             }
+                                                            <ModeToggle />
                                                   </div>
                                         </div>
                               )}

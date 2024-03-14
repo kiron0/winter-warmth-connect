@@ -64,7 +64,7 @@ export default function DonateModal({ button, clothModal, setClothModal }: Donat
                                                             </div>
                                                             <div className="flex justify-between items-center">
                                                                       <p className="text-sm"><span className="font-bold">Size: </span>{clothModal?.size?.map((size, index) => (
-                                                                                <span key={index} className="capitalize bg-gray-100 ml-2 rounded-md shadow-sm px-2 py-1 text-xs">{size}</span>
+                                                                                <span key={index} className="capitalize bg-primary text-primary-foreground ml-2 rounded-md shadow-sm px-2 py-1 text-xs">{size}</span>
                                                                       ))}</p>
                                                                       <p className="text-sm capitalize"><span className="font-bold">Category: </span>{clothModal?.category}</p>
                                                             </div>

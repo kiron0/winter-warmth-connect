@@ -129,8 +129,8 @@ input[type="number"] {
 }
 
 ::-webkit-scrollbar {
-  @apply w-[0.4rem] bg-white rounded-[0.6rem];
+  @apply w-[0.4rem] rounded-[0.6rem];
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-[0.6rem] sm:hover:bg-gray-500 duration-300;
+  @apply bg-primary rounded-[0.6rem] duration-300;
 }
