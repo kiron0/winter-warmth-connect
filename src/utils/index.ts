@@ -73,3 +73,26 @@ export const categories = [
                     name: 'Accessories'
           }
 ]
+
+export const navLinks = [
+          {
+                    title: 'Winter Clothes',
+                    path: '/winter-clothes'
+          },
+          {
+                    title: 'Leaderboard',
+                    path: '/leaderboard'
+          },
+          {
+                    title: 'Community',
+                    path: '/community'
+          },
+          {
+                    title: 'Volunteer',
+                    path: '/volunteer'
+          },
+          {
+                    title: 'About Us',
+                    path: '/about-us'
+          }
+];

@@ -1,8 +1,9 @@
+import StyleProvider from "@/components/style-provider";
 
 export default function Volunteer() {
           return (
-                    <div>
+                    <StyleProvider>
                               <h1>This is Volunteer component</h1>
-                    </div>
+                    </StyleProvider>
           )
 }

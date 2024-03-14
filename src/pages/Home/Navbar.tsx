@@ -1,6 +1,7 @@
 import Logo from "@/assets/logo.png";
 import CustomToastMessage from "@/components/custom-toast-message";
 import { ModeToggle } from "@/components/mode-toggle";
+import NavLinkItem from "@/components/nav-link";
 import {
           DropdownMenu,
           DropdownMenuContent,
@@ -14,6 +15,7 @@ import { logout } from "@/redux/features/auth/authSlice";
 import { clearUserDetails } from "@/redux/features/user/userSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { TUserDetails } from "@/types";
+import { navLinks } from "@/utils";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { AiOutlineClose } from 'react-icons/ai';
@@ -36,28 +38,21 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
 
           const MenuLinks =
                     <>
-                              <NavLink
-                                        to="/winter-clothes"
-                                        className={({ isActive }) =>
-                                                  isActive ? "bg-primary text-primary-foreground font-lemonMilk transition duration-300 py-2 px-3 rounded-full" : `border transition duration-300 py-2 px-3 rounded-full sm:hover:bg-primary sm:hover:text-primary-foreground font-lemonMilk`
-                                        }
-                              >
-                                        Winter Clothes
-                              </NavLink>
-                              <NavLink
-                                        to="/gallery"
-                                        className={({ isActive }) =>
-                                                  isActive ? "bg-primary text-primary-foreground font-lemonMilk transition duration-300 py-2 px-3 rounded-full" : `border transition duration-300 py-2 px-3 rounded-full sm:hover:bg-primary sm:hover:text-primary-foreground font-lemonMilk`
-                                        }
-                              >
-                                        Gallery
-                              </NavLink>
+                              {
+                                        navLinks.map((link, index) => (
+                                                  <NavLinkItem
+                                                            key={index}
+                                                            title={link.title}
+                                                            path={link.path}
+                                                  />
+                                        ))
+                              }
                               {
                                         !user?.email && (
                                                   <NavLink
                                                             to="/login"
-                                                            className='transition duration-300 py-2 px-3 rounded-full bg-primary text-primary-foreground flex items-center gap-2 font-lemonMilk'>
-                                                            <HiOutlineLogin size={18} /> Login
+                                                            className='transition duration-300 py-2 px-3 rounded-full bg-primary text-primary-foreground flex items-center gap-1'>
+                                                            <HiOutlineLogin size={15} /> Login
                                                   </NavLink>
                                         )
                               }
@@ -86,7 +81,7 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                             <img src={Logo} draggable={false} alt="logo" className='w-8 md:w-10 select-none rounded-lg' />
                                                             <h1 className='font-lemonMilk text-lg lg:text-xl inline-block ml-2'>{APP_NAME}</h1>
                                                   </Link>
-                                                  <div className='hidden md:flex duration-300 space-x-4'>
+                                                  <div className='hidden lg:flex duration-300 space-x-4'>
                                                             {MenuLinks}
                                                             {
                                                                       user?.email && (
@@ -103,9 +98,6 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                                                                               </div>
                                                                                                     </DropdownMenuTrigger>
                                                                                                     <DropdownMenuContent className="w-[15rem] mr-4 mt-2 space-y-2 rounded-xl relative">
-                                                                                                              <div className="absolute top-0 right-0">
-                                                                                                                        <ModeToggle />
-                                                                                                              </div>
                                                                                                               <DropdownMenuLabel>
                                                                                                                         <div className="flex flex-col justify-center items-center mt-4">
                                                                                                                                   <div className={`w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden`}>
@@ -136,8 +128,9 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                                                                 </div>
                                                                       )
                                                             }
+                                                            <ModeToggle />
                                                   </div>
-                                                  <div className="md:hidden flex">
+                                                  <div className="lg:hidden flex">
                                                             <button onClick={toggleMobileMenu} className='z-30 dark:text-white'>
                                                                       {isMobileMenuOpen ?
                                                                                 (<AiOutlineClose size={30} />)
@@ -149,22 +142,22 @@ export default function Navbar({ user }: { user: TUserDetails | null }) {
                                         </div>
                               </div>
                               {isMobileMenuOpen && (
-                                        <div className="md:hidden absolute top-0 w-full z-10">
+                                        <div className="lg:hidden absolute top-0 w-full z-10">
                                                   <div className="bg-white dark:bg-background dark:text-primary relative flex flex-col justify-start items-center gap-4 px-2 pt-24 h-screen">
                                                             {MenuLinks}
                                                             {
                                                                       user?.email && (
                                                                                 <>
-                                                                                          <Link to={'/dashboard'} className="py-2 px-3 rounded-full border font-lemonMilk">
+                                                                                          <Link to={'/dashboard'} className="py-2 px-3 rounded-full border sm:hover:bg-primary sm:hover:text-primary-foreground duration-300">
                                                                                                     Dashboard
                                                                                           </Link>
-                                                                                          <button onClick={() => { handleLogOut(), setIsMobileMenuOpen(!isMobileMenuOpen) }} className="flex items-center gap-2 bg-primary text-primary-foreground py-2 px-3 rounded-full border font-lemonMilk">
-                                                                                                    <HiOutlineLogout size={18} /> Logout
+                                                                                          <button onClick={() => { handleLogOut(), setIsMobileMenuOpen(!isMobileMenuOpen) }} className="flex items-center gap-1 bg-primary text-primary-foreground py-2 px-3 rounded-full border">
+                                                                                                    <HiOutlineLogout size={15} /> Logout
                                                                                           </button>
                                                                                 </>
                                                                       )
                                                             }
-                                                            <ModeToggle />
+                                                            <ModeToggle onClose={() => setIsMobileMenuOpen(false)} />
                                                   </div>
                                         </div>
                               )}

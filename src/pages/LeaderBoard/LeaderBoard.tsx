@@ -1,8 +1,9 @@
+import StyleProvider from "@/components/style-provider";
 
 export default function LeaderBoard() {
           return (
-                    <div>
+                    <StyleProvider>
                               <h1>This is Leaderboard component</h1>
-                    </div>
+                    </StyleProvider>
           )
 }
